@@ -1,0 +1,74 @@
+<!doctype html>
+<html>
+    <head>
+        <title>Rayhan Junicko</title>
+        <link rel="stylesheet" type="text/css" href="project1.css">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="layer">
+            <div class="content-layer">
+                <div class="text-layer">
+                    <h1 style="text-align: center">Cahaya Mandiri</h1>
+                    <h4 style="text-align: center; margin-bottom: 20px">October 2021 - December 2021</h4>
+                    <p><i class="fa-regular fa-square-caret-right"></i>
+                        Provide innovative design and translate to HTML, CSS, and JavaScript.
+                    </p>
+                    <p><i class="fa-regular fa-square-caret-right"></i>
+                        Maintain website every month and update the content.
+                    </p>
+                    <p><i class="fa-regular fa-square-caret-right"></i>
+                        Present informative website content that is used for the company’s online portfolio.</p>
+                </div>
+                <div class="photo-layer">
+                    <div class="carousel">
+                        <div class="carousel-slide">
+                            <img src="project2/4.jpg">
+                            <img src="project2/1.jpg">
+                            <img src="project2/2.jpg">
+                            <img src="project2/3.jpg">
+                            <img src="project2/4.jpg">
+                        </div>
+                        <div class="arrow">
+                            <i class="fa-solid fa-caret-left" id="arrow-left"></i>
+                            <i class="fa-solid fa-caret-right" id="arrow-right"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script>
+            const carouselSlide = document.querySelector('.carousel-slide');
+            const carouselCont = document.querySelector('.carousel');
+            const carouselImg = document.querySelectorAll('.carousel-slide img');
+            const rightArrow = document.querySelector('#arrow-right');
+            const leftArrow = document.querySelector('#arrow-left');
+            
+            let counter = 1;
+            const size = carouselImg[0].clientWidth;
+            
+            carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+            
+            rightArrow.addEventListener('click', ()=>{
+                carouselSlide.style.transition = "transform 0.4s ease-in-out";
+                counter++;
+                if(counter >= 4){
+                    counter = 4;
+                }
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                console.log("test");
+            })
+            
+            leftArrow.addEventListener('click', ()=>{
+                carouselSlide.style.transition = "transform 0.4s ease-in-out";
+                counter--;
+                if(counter <= 1){
+                    counter = 1;
+                }
+                carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+                console.log("test");
+            })
+            
+        </script>
+    </body>
